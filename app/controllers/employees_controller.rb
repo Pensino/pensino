@@ -25,6 +25,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new.xml
   def new
     @employee = Employee.new
+    1.times { @employee.addresses.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -81,3 +82,4 @@ class EmployeesController < ApplicationController
     end
   end
 end
+

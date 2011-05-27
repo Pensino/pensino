@@ -27,7 +27,14 @@
     <%= f.label :registration %><br />
     <%= f.text_field :registration %>
   </div>
+  <div class="field">
+    <%= f.label :address %><br />
+  	<% f.fields_for :addresses do |builder| %>
+	  	<%= render :partial => '/partials/address_fields', :locals => { :f => builder }  %>
+  	<% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
