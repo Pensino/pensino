@@ -1,0 +1,41 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :document %><br />
+    <%= f.text_field :document %>
+  </div>
+  <div class="field">
+    <%= f.label :registration %><br />
+    <%= f.text_field :registration %>
+  </div>
+  <div class="field">
+    <%= f.label :coordinator %><br />
+    <%= f.check_box :coordinator %>
+  </div>
+  <div class="field">
+    <%= f.label :professor %><br />
+    <%= f.check_box :professor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

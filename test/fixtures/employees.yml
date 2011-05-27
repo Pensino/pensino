@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  document: MyString
+  registration: 1
+  coordinator: false
+  professor: false
+
+two:
+  first_name: MyString
+  last_name: MyString
+  document: MyString
+  registration: 1
+  coordinator: false
+  professor: false

@@ -1,4 +1,10 @@
 Pensino::Application.routes.draw do
+  resources :students
+
+  resources :employees
+
+  resources :courses
+
   resources :matters
 
   # The priority is based upon order of creation:

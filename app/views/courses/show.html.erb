@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @course.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @course.category %>
+</p>
+
+<p>
+  <b>Steps:</b>
+  <%= @course.steps %>
+</p>
+
+<p>
+  <b>Grid:</b><br />
+  <% for grid in @course.grids %>
+    <b>Step:</b> <%= grid.step %> - <b>Matter</b> <%= grid.matter.name %><br />
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+
