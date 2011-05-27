@@ -25,6 +25,7 @@ class StudentsController < ApplicationController
   # GET /students/new.xml
   def new
     @student = Student.new
+    1.times { @student.addresses.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -81,3 +82,4 @@ class StudentsController < ApplicationController
     end
   end
 end
+
