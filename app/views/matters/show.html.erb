@@ -1,20 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nome:</b>
   <%= @matter.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Descrição:</b>
   <%= @matter.description %>
 </p>
 
 <p>
-  <b>Quantity lessons:</b>
+  <b>Quantidade de aulas:</b>
   <%= @matter.quantity_lessons %>
 </p>
 
 
-<%= link_to 'Edit', edit_matter_path(@matter) %> |
-<%= link_to 'Back', matters_path %>
+<%= link_to 'Alterar', edit_matter_path(@matter) %> |
+<%= link_to 'Voltar', matters_path %>
+

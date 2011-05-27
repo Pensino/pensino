@@ -9,3 +9,9 @@ two:
   name: MyString
   description: MyText
   quantity_lessons: 1
+
+aula_intelig_artificial:
+  name: Inteligencia Artificial
+  description: Aula para doidos.
+  quantity_lessons: 1
+

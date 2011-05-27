@@ -44,7 +44,7 @@ class MattersController < ApplicationController
 
     respond_to do |format|
       if @matter.save
-        format.html { redirect_to(@matter, :notice => 'Matter was successfully created.') }
+        format.html { redirect_to(@matter, :notice => 'Disciplina criada com sucesso.') }
         format.xml  { render :xml => @matter, :status => :created, :location => @matter }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class MattersController < ApplicationController
 
     respond_to do |format|
       if @matter.update_attributes(params[:matter])
-        format.html { redirect_to(@matter, :notice => 'Matter was successfully updated.') }
+        format.html { redirect_to(@matter, :notice => 'Disciplina atualizada com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -81,3 +81,4 @@ class MattersController < ApplicationController
     end
   end
 end
+

@@ -1,7 +1,9 @@
 <%= form_for(@matter) do |f| %>
   <% if @matter.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@matter.errors.count, "error") %> prohibited this matter from being saved:</h2>
+      <h2><%= t('errors.template.header', :count=>@matter.errors.size, :model=> t('activerecord.models.matter')) %>:</h2>
+
+      <!-- <h2><%= pluralize(@matter.errors.count, "error") %> prohibited this matter from being saved:</h2> -->
 
       <ul>
       <% @matter.errors.full_messages.each do |msg| %>
@@ -27,3 +29,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

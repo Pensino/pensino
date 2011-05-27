@@ -1,10 +1,10 @@
-<h1>Listing matters</h1>
+<h1>Disciplinas</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Quantity lessons</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Quantidade de aulas</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,13 +15,14 @@
     <td><%= matter.name %></td>
     <td><%= matter.description %></td>
     <td><%= matter.quantity_lessons %></td>
-    <td><%= link_to 'Show', matter %></td>
-    <td><%= link_to 'Edit', edit_matter_path(matter) %></td>
-    <td><%= link_to 'Destroy', matter, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Detalhes', matter %></td>
+    <td><%= link_to 'Alterar', edit_matter_path(matter) %></td>
+    <td><%= link_to 'Remover', matter, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Matter', new_matter_path %>
+<%= link_to 'Nova Disciplina', new_matter_path %>
+

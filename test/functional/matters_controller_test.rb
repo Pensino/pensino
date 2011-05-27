@@ -6,7 +6,7 @@ class MattersControllerTest < ActionController::TestCase
     @update = {
       :name            => 'Computacao Grafica',
       :description     => 'Comp. Grafica',
-      :quantity_classes => 1
+      :quantity_lessons => 1
     }
   end
 
