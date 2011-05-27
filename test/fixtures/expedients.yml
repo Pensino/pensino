@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  day: MyString
+  start_time: 2011-05-26 22:56:40
+  end_time: 2011-05-26 22:56:40
+  quantity_lessons: 1
+
+two:
+  day: MyString
+  start_time: 2011-05-26 22:56:40
+  end_time: 2011-05-26 22:56:40
+  quantity_lessons: 1

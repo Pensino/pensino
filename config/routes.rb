@@ -1,4 +1,6 @@
 Pensino::Application.routes.draw do
+  resources :expedients
+
   resources :students
 
   resources :employees
