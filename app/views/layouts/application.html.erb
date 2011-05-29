@@ -12,14 +12,14 @@
 <%= link_to 'Matters', matters_path %> |
 <%= link_to 'Employees', employees_path %> |
 <%= link_to 'Students', students_path %> |
-<<<<<<< HEAD
+
 <%= link_to 'Expedients', expedients_path %> |
-<%= link_to 'Time Tables', time_tables_path %>
-=======
-<%= link_to 'Expedients', expedients_path %>
-<a href="http://localhost:3000/en"><%= t :english%></a>
-<a href="http://localhost:3000/pt-BR"><%= t :portuguese%></a>
->>>>>>> origin/master
+<%= link_to 'Time Tables', time_tables_path %> |
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to t(:english), '/en' %> |
+<%= link_to t(:portuguese), '/pt-BR' %> |
+
 
 <%= yield %>
 
