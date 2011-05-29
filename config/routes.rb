@@ -1,13 +1,13 @@
 Pensino::Application.routes.draw do
-  resources :expedients
-
-  resources :students
-
-  resources :employees
-
-  resources :courses
-
-  resources :matters
+  scope "(:locale)", :locale => /en|pt-BR/ do
+    resources :expedients
+    resources :students
+    resources :employees
+    resources :courses
+    resources :matters
+  end  
+  root :to => "courses#index", :as => "root"
+  match "/:locale" => "courses#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
