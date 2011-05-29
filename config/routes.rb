@@ -1,4 +1,6 @@
 Pensino::Application.routes.draw do
+  resources :time_tables
+
   resources :expedients
 
   resources :students

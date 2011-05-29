@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  grid_id: 1
+  employee_id: 1
+  start_date: 2011-05-26
+  end_date: 2011-05-26
+
+two:
+  grid_id: 1
+  employee_id: 1
+  start_date: 2011-05-26
+  end_date: 2011-05-26

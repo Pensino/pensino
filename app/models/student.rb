@@ -4,5 +4,9 @@ class Student < ActiveRecord::Base
 
   has_many :addresses, :as => :addressable, :dependent => :destroy
   accepts_nested_attributes_for :addresses
+
+  def name
+    first_name + ' ' + last_name
+  end
 end
 

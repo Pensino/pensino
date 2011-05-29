@@ -1,0 +1,42 @@
+<%= form_for(@time_table) do |f| %>
+  <% if @time_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@time_table.errors.count, "error") %> prohibited this time_table from being saved:</h2>
+
+      <ul>
+      <% @time_table.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :grid_id %><br />
+    <%= f.collection_select(:grid_id, Grid.all, :id, :name, {:include_blank => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :professor %><br />
+    <%= f.collection_select(:employee_id, Employee.all(:conditions => {:professor => true}, :order => :first_name), :id, :name, {:include_blank => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :expedients %><br />
+
+    <% f.fields_for :expedient_time_tables do |builder| %>
+		  <%= render :partial => '/partials/expedient_time_table_fields', :locals => { :f => builder }  %>
+	  <% end %>
+    <p><%= link_to_add_fields("Add Expedients", f, :expedient_time_tables) %></p>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

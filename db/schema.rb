@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527022621) do
+ActiveRecord::Schema.define(:version => 20110529231829) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -46,11 +46,25 @@ ActiveRecord::Schema.define(:version => 20110527022621) do
     t.datetime "updated_at"
   end
 
+  create_table "expedient_time_tables", :force => true do |t|
+    t.integer  "expedient_id"
+    t.integer  "time_table_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "expedients", :force => true do |t|
     t.string   "day"
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "quantity_lessons"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "expedients_time_tables", :id => false, :force => true do |t|
+    t.integer  "expedient_id"
+    t.integer  "time_table_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,6 +90,15 @@ ActiveRecord::Schema.define(:version => 20110527022621) do
     t.string   "last_name"
     t.string   "document"
     t.integer  "registration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "time_tables", :force => true do |t|
+    t.integer  "grid_id"
+    t.integer  "employee_id"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
