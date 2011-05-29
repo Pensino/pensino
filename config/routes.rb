@@ -1,15 +1,15 @@
 Pensino::Application.routes.draw do
-  resources :time_tables
 
-  resources :expedients
-
-  resources :students
-
-  resources :employees
-
-  resources :courses
-
-  resources :matters
+  scope "(:locale)", :locale => /en|pt-BR/ do
+    resources :expedients
+    resources :students
+    resources :employees
+    resources :courses
+    resources :matters
+    resources :time_tables
+  end
+  root :to => "courses#index", :as => "root"
+  match "/:locale" => "courses#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -68,3 +68,4 @@ Pensino::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+

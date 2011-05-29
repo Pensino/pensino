@@ -1,6 +1,9 @@
 # encoding: UTF-8
 # pt-BR translations for Ruby on Rails
 "pt-BR":
+  matters: "Disciplinas"
+  english: "Inglês"
+  portuguese: "Português"
   # formatos de data e hora
   date:
     formats:
