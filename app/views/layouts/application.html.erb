@@ -8,20 +8,53 @@
 </head>
 <body>
 
-<%= link_to 'Courses', courses_path %> |
-<%= link_to 'Matters', matters_path %> |
-<%= link_to 'Employees', employees_path %> |
-<%= link_to 'Students', students_path %> |
 
-<%= link_to 'Expedients', expedients_path %> |
-<%= link_to 'Time Tables', time_tables_path %> |
+<div id="header">
+  <div id="app">
+    <div id="logo">
+      FATEC Jundiaí
+    </div>
+    <div id="welcome">
+      Olá coordenador Paulo Schiavon |
+      Preferências |
+      <%= link_to t(:english), '/en' %> |
+      <%= link_to t(:portuguese), '/pt-BR' %> |
+      Sair
+    </div>
+  </div>
+</div>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= link_to t(:english), '/en' %> |
-<%= link_to t(:portuguese), '/pt-BR' %> |
+<div id="navigation">
+  <div id="app">
+    <%= link_to 'Courses', courses_path %> |
+    <%= link_to 'Matters', matters_path %> |
+    <%= link_to 'Employees', employees_path %> |
+    <%= link_to 'Students', students_path %> |
+    <%= link_to 'Expedients', expedients_path %> |
+    <%= link_to 'Time Tables', time_tables_path %> |
+  </div>
+</div>
+
+<div id="wrapper">
+  <div id="app">
+
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+  <div id="app">
+
+  </div>
+</div>
 
 
-<%= yield %>
+
+
+
+
 
 </body>
 </html>
