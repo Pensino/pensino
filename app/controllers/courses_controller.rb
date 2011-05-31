@@ -81,5 +81,18 @@ class CoursesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+
+  def generate
+
+    grid = Grid.find(params[:grid])
+    puts 'pauloooo 2'
+    puts grid.matter.name
+
+    grid.time_table.generate_lessons
+
+    @course = Course.find(params[:id])
+    redirect_to(@course, :notice => 'Generate Lesson.')
+  end
 end
 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  expedient_time_table_id: 1
+  date_lesson: 2011-05-30
+  start_time: 2011-05-30 19:26:16
+  end_time: 2011-05-30 19:26:16
+  quantity_lessons: 1
+
+two:
+  expedient_time_table_id: 1
+  date_lesson: 2011-05-30
+  start_time: 2011-05-30 19:26:16
+  end_time: 2011-05-30 19:26:16
+  quantity_lessons: 1

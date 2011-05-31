@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Expedient time table:</b>
+  <%= @lesson.expedient_time_table_id %>
+</p>
+
+<p>
+  <b>Date lesson:</b>
+  <%= @lesson.date_lesson %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @lesson.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @lesson.end_time %>
+</p>
+
+<p>
+  <b>Quantity lessons:</b>
+  <%= @lesson.quantity_lessons %>
+</p>
+
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>

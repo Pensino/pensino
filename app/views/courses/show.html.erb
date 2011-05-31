@@ -23,7 +23,8 @@
 <p>
   <b>Grid:</b><br />
   <% for grid in @course.grids %>
-    <b>Step:</b> <%= grid.step %> - <b>Matter</b> <%= grid.matter.name %><br />
+    <b>Step:</b> <%= grid.step %> - <b>Matter</b> <%= grid.matter.name %> -
+    <%= link_to 'Generate Lesson', {:action => :generate, :grid => grid, :id => @course} %><br />
   <% end %>
 </p>
 
