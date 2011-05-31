@@ -86,8 +86,6 @@ class CoursesController < ApplicationController
   def generate
 
     grid = Grid.find(params[:grid])
-    puts 'pauloooo 2'
-    puts grid.matter.name
 
     grid.time_table.generate_lessons
 

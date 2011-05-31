@@ -1,6 +1,6 @@
 Pensino::Application.routes.draw do
 
-  resources :lessons
+
 
   scope "(:locale)", :locale => /en|pt-BR/ do
     resources :expedients
@@ -9,8 +9,11 @@ Pensino::Application.routes.draw do
     resources :courses
     resources :matters
     resources :time_tables
+    resources :registrations
+    resources :lessons
 
     match 'courses/:id/generate' => 'courses#generate'
+    match 'registrations/:id/release' => 'registrations#release'
   end
   root :to => "courses#index", :as => "root"
   match "/:locale" => "courses#index"

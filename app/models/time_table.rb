@@ -8,6 +8,9 @@ class TimeTable < ActiveRecord::Base
   has_many :expedient_time_tables
   accepts_nested_attributes_for :expedient_time_tables,  :reject_if => proc { |attributes| attributes['expedient_id'].blank? }, :allow_destroy => true
 
+  has_many :enrollments
+
+
   def name
     grid.name
   end
@@ -31,7 +34,7 @@ class TimeTable < ActiveRecord::Base
 
         lesson = Lesson.new
 
-        lesson.expedient_time_table_id = expedient_time_table
+        lesson.expedient_time_table_id = expedient_time_table.id
         lesson.date_lesson      = generate_day(date_lesson, expedient_time_table.expedient.day)
         lesson.start_time       = expedient_time_table.expedient.start_time
         lesson.end_time         = expedient_time_table.expedient.end_time

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Course:</b>
+  <%= @registration.course.name %>
+</p>
+
+<p>
+  <b>Student:</b>
+  <%= @registration.student.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @registration.status %>
+</p>
+
+
+<p>
+  <%= link_to 'Release Matter', {:action => :release, :id => @registration} %>
+</p>
+
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>
+
