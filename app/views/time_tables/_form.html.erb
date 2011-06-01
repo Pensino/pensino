@@ -12,9 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :grid_id %><br />
-    <%= f.collection_select(:grid_id, Grid.all, :id, :name, {:include_blank => true}) %>
+    <%= f.label :course %><br />
+    <%= @time_table.grid.course.name %>
   </div>
+  <div class="field">
+    <%= f.label :matter %><br />
+    <%= @time_table.grid.matter.name %>
+  </div>
+
+  <%= f.hidden_field :grid_id, :value => @time_table.grid.id %>
+
   <div class="field">
     <%= f.label :professor %><br />
     <%= f.collection_select(:employee_id, Employee.all(:conditions => {:professor => true}, :order => :first_name), :id, :name, {:include_blank => true}) %>

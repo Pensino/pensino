@@ -1,10 +1,10 @@
 class CreateTimeTables < ActiveRecord::Migration
   def self.up
     create_table :time_tables do |t|
-      t.integer :grid_id
-      t.integer :employee_id
-      t.date :start_date
-      t.date :end_date
+
+      t.references  :grid, :employee
+      t.date        :start_date
+      t.date        :end_date
 
       t.timestamps
     end
@@ -14,3 +14,4 @@ class CreateTimeTables < ActiveRecord::Migration
     drop_table :time_tables
   end
 end
+

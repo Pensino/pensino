@@ -1,29 +1,12 @@
 <h1>Listing courses</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Steps</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @courses.each do |course| %>
-  <tr>
-    <td><%= course.name %></td>
-    <td><%= course.description %></td>
-    <td><%= course.category %></td>
-    <td><%= course.steps %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <%= link_to course.name, course %><br />
+    <%= course.description %><br />
+    <%= course.steps %> <%= course.category_name %> - <%= course.grids.count %> Disciplinas <br />
 
+<% end %>
 <br />
 
 <%= link_to 'New Course', new_course_path %>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110531045944) do
+ActiveRecord::Schema.define(:version => 12) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20110531045944) do
     t.integer  "course_id"
     t.integer  "matter_id"
     t.integer  "step"
+    t.boolean  "generate_lesson", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

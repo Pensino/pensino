@@ -1,28 +1,13 @@
 <h1><%=t :matters %></h1>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Descrição</th>
-    <th>Quantidade de aulas</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @matters.each do |matter| %>
-  <tr>
-    <td><%= matter.name %></td>
-    <td><%= matter.description %></td>
-    <td><%= matter.quantity_lessons %></td>
-    <td><%= link_to 'Detalhes', matter %></td>
-    <td><%= link_to 'Alterar', edit_matter_path(matter) %></td>
-    <td><%= link_to 'Remover', matter, :confirm => 'Tem certeza?', :method => :delete %></td>
-  </tr>
+  <p>
+  <%= link_to matter.name, matter %> </br>
+  <%= matter.description %> </br>
+  <%= matter.quantity_lessons %> Aulas <br />
+  </p>
 <% end %>
-</table>
 
 <br />
-
 <%= link_to 'Nova Disciplina', new_matter_path %>
 

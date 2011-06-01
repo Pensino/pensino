@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @time_table %> |
-<%= link_to 'Back', time_tables_path %>
+<%= link_to 'Back', {:controller => :courses, :action => :show, :id => @time_table.grid.course.id} %>
+

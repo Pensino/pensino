@@ -17,5 +17,6 @@
 
 
 <%= link_to 'Alterar', edit_matter_path(@matter) %> |
+<%= link_to 'Remover', @matter, :confirm => 'Tem certeza?', :method => :delete %> |
 <%= link_to 'Voltar', matters_path %>
 

@@ -21,11 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+   	<%= f.select :category, [ ["Semanal", "1"], ["Bimestral", "2"], ["Semestral", "3"]], {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :steps %><br />
     <%= f.text_field :steps %>
+  </div>
+  <div class="field">
+    <%= f.label :coordinator %><br />
+    <%= f.collection_select(:employee_id, Employee.all(:conditions => {:coordinator => true}, :order => :first_name), :id, :name, {:include_blank => true}) %>
   </div>
   <div class="field">
     <%= f.label :grid %><br />

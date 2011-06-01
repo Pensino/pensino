@@ -4,6 +4,7 @@ class CreateGrids < ActiveRecord::Migration
 
       t.references  :course, :matter
       t.integer     :step
+      t.boolean     :generate_lesson, :default => false
 
       t.timestamps
     end
