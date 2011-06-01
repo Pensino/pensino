@@ -1,14 +1,28 @@
+# Pensino core
+# Copyright (C) 2011 by pensino.com.br
+#
+# This program isn't free software
+# ------------------------------------------------------------------------------
+#
+# id                     :: integer, not null, primary key
+# grid_id                :: integer, foreign key
+# employee_id            :: integer, foreign key
+# steps                  :: integer
+# start_date             :: date
+# end_date               :: date
+#
 class TimeTable < ActiveRecord::Base
 
-  validates :grid_id, :employee_id, :start_date, :end_date, :presence => true
+  has_many    :enrollments
+  has_many    :expedient_time_tables
+  belongs_to  :grid
+  belongs_to  :employee
 
-  belongs_to :grid
-  belongs_to :employee
+  accepts_nested_attributes_for :expedient_time_tables,
+                                :reject_if => proc { |attributes| attributes['expedient_id'].blank? },
+                                :allow_destroy => true
 
-  has_many :expedient_time_tables
-  accepts_nested_attributes_for :expedient_time_tables,  :reject_if => proc { |attributes| attributes['expedient_id'].blank? }, :allow_destroy => true
-
-  has_many :enrollments
+  validates   :grid_id, :employee_id, :start_date, :end_date, :presence => true
 
 
   def name

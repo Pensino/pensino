@@ -1,14 +1,15 @@
 # Pensino core
-# Copyright (C) 2008-2010 by pensino.com.br
+# Copyright (C) 2011 by pensino.com.br
 #
 # This program isn't free software
 # ------------------------------------------------------------------------------
-
-# id                  :: integer, not null, primary key
-# name                :: string
-# categoy             :: string
-# steps               :: integer
-# employee_id         :: integer, foreign key
+#
+# id                      :: integer, not null, primary key
+# name                    :: string
+# categoy                 :: string
+# steps                   :: integer
+# employee_id             :: integer, foreign key
+#
 class Course < ActiveRecord::Base
 
   has_many    :grids
@@ -19,8 +20,8 @@ class Course < ActiveRecord::Base
                                 :reject_if => proc { |attributes| attributes['matter_id'].blank? },
                                 :allow_destroy => true
 
-  validates :name, :description, :category, :steps, :presence => true
-  validates :name, :uniqueness => true
+  validates   :name, :description, :category, :steps, :presence => true
+  validates   :name, :uniqueness => true
 
   ## TODO: Arrumar isso
   def category_name

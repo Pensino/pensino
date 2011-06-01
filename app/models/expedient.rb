@@ -1,13 +1,22 @@
+# Pensino core
+# Copyright (C) 2011 by pensino.com.br
+#
+# This program isn't free software
+# ------------------------------------------------------------------------------
+#
+# id                      :: integer, not null, primary key
+# day                     :: integer
+# start_time              :: time
+# end_time                :: time
+# quantity_lessons        :: integer
+#
 class Expedient < ActiveRecord::Base
-  validates :day, :start_time, :end_time, :quantity_lessons, :presence => true
 
-  has_many :expedient_time_tables
+  has_many    :expedient_time_tables
 
-  #def name
-  #  day + ' :: ' + start_time.to_s + ' :: ' + end_time.to_s + ' :: ' + quantity_lessons.to_s
+  validates   :day, :start_time, :end_time, :quantity_lessons, :presence => true
 
-  #end
-
+  # TODO: arrumar isso
   def name
     if day == 1
       name = 'Segunda-Feira ::' + start_time.to_s + ' :: ' + end_time.to_s + ' :: ' + quantity_lessons.to_s
