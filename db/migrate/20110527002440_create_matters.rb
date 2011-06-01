@@ -1,9 +1,10 @@
 class CreateMatters < ActiveRecord::Migration
   def self.up
     create_table :matters do |t|
-      t.string :name
-      t.text :description
-      t.integer :quantity_lessons
+
+      t.string      :name
+      t.text        :description
+      t.integer     :quantity_lessons
 
       t.timestamps
     end
@@ -13,3 +14,4 @@ class CreateMatters < ActiveRecord::Migration
     drop_table :matters
   end
 end
+

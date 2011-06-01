@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(:version => 20110531045944) do
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "category"
+    t.integer  "category"
     t.integer  "steps"
+    t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20110531045944) do
   end
 
   create_table "expedients", :force => true do |t|
-    t.string   "day"
+    t.integer  "day"
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "quantity_lessons"
