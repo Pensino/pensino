@@ -3,6 +3,7 @@ class Employee < ActiveRecord::Base
   validates :document, :registration, :uniqueness => true
 
   has_many :addresses, :as => :addressable, :dependent => :destroy
+  has_many :courses
   accepts_nested_attributes_for :addresses
 
   has_many :time_tables

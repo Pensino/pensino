@@ -1,10 +1,11 @@
 <h1>Listing courses</h1>
 
 <% @courses.each do |course| %>
-  <%= link_to course.name, course %><br />
-    <%= course.description %><br />
-    <%= course.steps %> <%= course.category_name %> - <%= course.grids.count %> Disciplinas <br />
 
+  <%= link_to course.name, course %><br />
+  <%= course.description %><br />
+  Coordenador <%= course.employee.name %> - <%= course.steps %> <%= course.category_name %> - <%= course.grids.count %> Disciplinas <br />
+  <%= course.registrations.count %> Alunos Matriculados <br /><br />
 <% end %>
 <br />
 

@@ -11,8 +11,9 @@
 # employee_id         :: integer, foreign key
 class Course < ActiveRecord::Base
 
-  has_many :grids
-  has_many :registrations
+  has_many    :grids
+  has_many    :registrations
+  belongs_to  :employee
 
   accepts_nested_attributes_for :grids,
                                 :reject_if => proc { |attributes| attributes['matter_id'].blank? },
