@@ -1,7 +1,17 @@
+# Pensino core
+# Copyright (C) 2011 by pensino.com.br
+#
+# This program isn't free software
+# ------------------------------------------------------------------------------
+#
 class CoursesController < ApplicationController
+
+
   # GET /courses
-  # GET /courses.xml
+  # GET /courses.xml                                               HTML and AJAX
+  # ----------------------------------------------------------------------------
   def index
+
     @courses = Course.all
 
     respond_to do |format|
@@ -10,9 +20,12 @@ class CoursesController < ApplicationController
     end
   end
 
+
   # GET /courses/1
-  # GET /courses/1.xml
+  # GET /courses/1.xml                                             HTML and AJAX
+  # ----------------------------------------------------------------------------
   def show
+
     @course = Course.find(params[:id])
 
     respond_to do |format|
@@ -21,9 +34,12 @@ class CoursesController < ApplicationController
     end
   end
 
+
   # GET /courses/new
-  # GET /courses/new.xml
+  # GET /courses/new.xml                                           HTML and AJAX
+  # ----------------------------------------------------------------------------
   def new
+
     @course = Course.new
     3.times { @course.grids.build }
 
@@ -33,14 +49,19 @@ class CoursesController < ApplicationController
     end
   end
 
-  # GET /courses/1/edit
+
+  # GET /courses/1/edit                                                     HTML
+  # ----------------------------------------------------------------------------
   def edit
     @course = Course.find(params[:id])
   end
 
+
   # POST /courses
-  # POST /courses.xml
+  # POST /courses.xml                                              HTML and AJAX
+  # ----------------------------------------------------------------------------
   def create
+
     @course = Course.new(params[:course])
 
     respond_to do |format|
@@ -54,8 +75,10 @@ class CoursesController < ApplicationController
     end
   end
 
+
   # PUT /courses/1
-  # PUT /courses/1.xml
+  # PUT /courses/1.xml                                             HTML and AJAX
+  # ----------------------------------------------------------------------------
   def update
     @course = Course.find(params[:id])
 
@@ -70,8 +93,10 @@ class CoursesController < ApplicationController
     end
   end
 
+
   # DELETE /courses/1
-  # DELETE /courses/1.xml
+  # DELETE /courses/1.xml                                          HTML and AJAX
+  # ----------------------------------------------------------------------------
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
@@ -83,10 +108,12 @@ class CoursesController < ApplicationController
   end
 
 
+  # PUT /courses/1/generate?grid=1                                 HTML and AJAX
+  # ----------------------------------------------------------------------------
   def generate
 
-    grid = Grid.find(params[:grid])
 
+    grid = Grid.find(params[:grid])
     grid.time_table.generate_lessons
 
     @course = Course.find(params[:id])

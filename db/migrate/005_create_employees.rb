@@ -9,6 +9,10 @@ class CreateEmployees < ActiveRecord::Migration
       t.boolean     :coordinator
       t.boolean     :professor
 
+      t.string      :email
+      t.string      :username
+      t.string      :password
+
       t.timestamps
     end
   end

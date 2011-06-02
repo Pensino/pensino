@@ -2,6 +2,8 @@ Pensino::Application.routes.draw do
 
 
 
+  resources :users
+
   scope "(:locale)", :locale => /en|pt-BR/ do
     resources :expedients
     resources :students

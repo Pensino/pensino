@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 12) do
+ActiveRecord::Schema.define(:version => 13) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(:version => 12) do
     t.integer  "registration"
     t.boolean  "coordinator"
     t.boolean  "professor"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -110,6 +113,9 @@ ActiveRecord::Schema.define(:version => 12) do
     t.string   "last_name"
     t.string   "document"
     t.integer  "registration"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,6 +125,11 @@ ActiveRecord::Schema.define(:version => 12) do
     t.integer  "employee_id"
     t.date     "start_date"
     t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

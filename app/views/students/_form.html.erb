@@ -28,6 +28,18 @@
     <%= f.text_field :registration %>
   </div>
   <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+	  <%= f.label :username %><br />
+	  <%= f.text_field :username %>
+  </div>
+  <div class="field">
+	  <%= f.label :password %><br />
+	  <%= f.password_field :password %>
+  </div>
+  <div class="field">
     <%= f.label :address %><br />
   	<% f.fields_for :addresses do |builder| %>
 	  	<%= render :partial => '/partials/address_fields', :locals => { :f => builder }  %>

@@ -16,6 +16,7 @@ class Student < ActiveRecord::Base
   has_many    :addresses, :as => :addressable, :dependent => :destroy
   has_many    :registrations
   has_many    :enrollments
+  has_many    :users, :as => :userable, :dependent => :destroy
 
   accepts_nested_attributes_for :addresses
 
