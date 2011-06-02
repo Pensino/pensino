@@ -22,16 +22,21 @@
 
 <p>
   <% for grid in @course.grids %>
-    <b>Matter</b> <%= grid.matter.name %> - <b>Step:</b> <%= grid.step %> -
-    <%= link_to 'Generate Lesson', {:action => :generate, :grid => grid, :id => @course} %><br />
+
+    <b>Matter</b> <%= grid.matter.name %> - <b>Step:</b> <%= grid.step %> <br />
+
     <% if grid.time_table %>
-      &nbsp;&nbsp;<%= grid.time_table.employee.name %> <br />
-      &nbsp;&nbsp;<%= grid.time_table.start_date %> à <%= grid.time_table.end_date %> <br />
+
+      <%= grid.time_table.start_date %> à <%= grid.time_table.end_date %> - Prof <%= grid.time_table.employee.name %> <br />
+
       <% for expedient_time_table in grid.time_table.expedient_time_tables %>
-        &nbsp;&nbsp;&nbsp;&nbsp;<%= expedient_time_table.expedient.name %><br />
+
+        <%= expedient_time_table.expedient.name %><br />
       <% end %>
-      &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit Time Table', {:controller => :time_tables, :action => :edit, :id => grid.time_table} %> |
-      <%= link_to 'Destroy', grid.time_table, :confirm => 'Are you sure?', :method => :delete %></td>
+
+      <%= link_to 'Generate Lessons', {:action => :generate, :grid => grid, :id => @course} %> |
+      <%= link_to 'Edit Time Table', {:controller => :time_tables, :action => :edit, :id => grid.time_table} %> |
+      <%= link_to 'Destroy Time Table', grid.time_table, :confirm => 'Are you sure?', :method => :delete %></td>
       <br />
     <% else %>
         <%= link_to 'Add Time Table', {:controller => :time_tables, :action => :new, :grid => grid} %><br />
