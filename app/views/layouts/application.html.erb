@@ -26,13 +26,13 @@
 
     <div id='navigation'>
       <ul id='menu'>
-        <li><%= link_to 'Courses', courses_path, :class => 'current' %></li>
-        <li><%= link_to 'Matters', matters_path %></li>
-        <li><%= link_to 'Employees', employees_path %></li>
-        <li><%= link_to 'Students', students_path %></li>
-        <li><%= link_to 'Expedients', expedients_path %></li>
-        <li><%= link_to 'Lessons', lessons_path %></li>
-        <li><%= link_to 'Registrations', registrations_path %></li>
+        <li><%= link_to 'Courses', courses_path, :class => tab_class('Courses') %></li>
+        <li><%= link_to 'Matters', matters_path, :class => tab_class('Matters')  %></li>
+        <li><%= link_to 'Employees', employees_path, :class => tab_class('Employees') %></li>
+        <li><%= link_to 'Students', students_path, :class => tab_class('Students') %></li>
+        <li><%= link_to 'Expedients', expedients_path, :class => tab_class('Expedients') %></li>
+        <li><%= link_to 'Lessons', lessons_path, :class => tab_class('Lessons') %></li>
+        <li><%= link_to 'Registrations', registrations_path, :class => tab_class('Registrations') %></li>
       </ul>
     </div>
   </div>

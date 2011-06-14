@@ -121,7 +121,7 @@ body {
 		}
 		ul#menu li a.right{padding-right:19px;}
 		ul#menu li a:hover{background: #97baff;color: navy; }
-		ul#menu li a.current{background: azure;
+		ul#menu li a.current{background: #ededed;
     color: navy;}
 
 
@@ -137,12 +137,6 @@ body {
 		background: #ffffff;
 		float:left;
 		width: 720px;
-
-    -moz-border-radius-topright: 8px;
-    -moz-border-radius-bottomright: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-
 
 	   box-shadow: 1px 1px 1px 2px #c6c6c6;
 	}

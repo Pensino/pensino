@@ -19,5 +19,19 @@ module ApplicationHelper
     end
     link_to_function(name, ("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end
+
+  def tab_class(tab)
+
+    controller = @controller.class.to_s
+
+    controller = (controller == 'TimeTablesController'? 'CoursesController' : controller)
+
+    if (tab.to_s + 'Controller').to_s == controller
+      'current'
+    else
+      ''
+    end
+  end
+
 end
 
