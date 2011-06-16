@@ -125,6 +125,13 @@ body {
     color: navy;}
 
 
+#messages {
+
+	border: 1px green solid;
+	vertical-align: middle;
+	background: #e2f9e3;
+	color: green;
+}
 
 
 #wrapper {

@@ -33,5 +33,21 @@ module ApplicationHelper
     end
   end
 
+  def flash_message
+
+    messages = ""
+    [:notice, :info, :warning, :error].each {|type|
+      if flash[type]
+        messages += "<div id='messages'>
+                      <div id='app'>
+                        <p class=\"#{type}\">#{flash[type]}</p>
+                      </div>
+                     </div>"
+
+      end
+    }
+    messages
+  end
+
 end
 
