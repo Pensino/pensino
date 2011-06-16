@@ -1,29 +1,34 @@
-<h1>Listing expedients</h1>
+<% title 'Expedients' %>
 
-<table>
-  <tr>
-    <th>Day</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Quantity lessons</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% content_for :main do %>
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Quantity lessons</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @expedients.each do |expedient| %>
-  <tr>
-    <td><%= expedient.day %></td>
-    <td><%= expedient.start_time %></td>
-    <td><%= expedient.end_time %></td>
-    <td><%= expedient.quantity_lessons %></td>
-    <td><%= link_to 'Show', expedient %></td>
-    <td><%= link_to 'Edit', edit_expedient_path(expedient) %></td>
-    <td><%= link_to 'Destroy', expedient, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <% @expedients.each do |expedient| %>
+    <tr>
+      <td><%= expedient.day %></td>
+      <td><%= expedient.start_time %></td>
+      <td><%= expedient.end_time %></td>
+      <td><%= expedient.quantity_lessons %></td>
+      <td><%= link_to 'Show', expedient %></td>
+      <td><%= link_to 'Edit', edit_expedient_path(expedient) %></td>
+      <td><%= link_to 'Destroy', expedient, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 <% end %>
-</table>
 
-<br />
+<% content_for :slidebar do %>
+  <%= link_to new_expedient_path, :class => 'big button' do %>
+    <span class="plus icon"></span>New Expedient
+  <% end %>
+<% end %>
 
-<%= link_to 'New Expedient', new_expedient_path %>

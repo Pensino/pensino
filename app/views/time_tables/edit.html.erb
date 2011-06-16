@@ -1,6 +1,9 @@
-<h1>Editing time_table</h1>
+<% title 'Editing TimeTable' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Back', {:controller => :courses, :action => :show, :id => @time_table.grid.course.id} %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', {:controller => :courses, :action => :show, :id => @time_table.grid.course.id} %>
+<% end %>
 

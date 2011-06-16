@@ -1,33 +1,38 @@
-<h1>Listing employees</h1>
+<% title 'Employees' %>
 
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Document</th>
-    <th>Registration</th>
-    <th>Coordinator</th>
-    <th>Professor</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% content_for :main do %>
+  <table>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Document</th>
+      <th>Registration</th>
+      <th>Coordinator</th>
+      <th>Professor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @employees.each do |employee| %>
-  <tr>
-    <td><%= employee.first_name %></td>
-    <td><%= employee.last_name %></td>
-    <td><%= employee.document %></td>
-    <td><%= employee.registration %></td>
-    <td><%= employee.coordinator %></td>
-    <td><%= employee.professor %></td>
-    <td><%= link_to 'Show', employee %></td>
-    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-    <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.first_name %></td>
+      <td><%= employee.last_name %></td>
+      <td><%= employee.document %></td>
+      <td><%= employee.registration %></td>
+      <td><%= employee.coordinator %></td>
+      <td><%= employee.professor %></td>
+      <td><%= link_to 'Show', employee %></td>
+      <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+      <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 <% end %>
-</table>
 
-<br />
+<% content_for :slidebar do %>
+  <%= link_to new_employee_path, :class => 'big button' do %>
+    <span class="plus icon"></span>New Employee
+  <% end %>
+<% end %>
 
-<%= link_to 'New Employee', new_employee_path %>

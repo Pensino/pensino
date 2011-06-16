@@ -1,6 +1,10 @@
-<h1>Editing course</h1>
+<% title 'Editing Course' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @course %> |
+  <%= link_to 'Back', courses_path %>
+<% end %>
+

@@ -14,3 +14,9 @@ function add_fields(link, association, content){
 	});
 }
 
+
+$('.submit_me').click(function() {
+	$(this).parent().submit();
+	return false;
+});
+

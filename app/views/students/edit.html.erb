@@ -1,6 +1,10 @@
-<h1>Editing student</h1>
+<% title 'Editing Student' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @student %> |
+  <%= link_to 'Back', students_path %>
+<% end %>
+

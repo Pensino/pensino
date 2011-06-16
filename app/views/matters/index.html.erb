@@ -1,13 +1,18 @@
-<h1><%=t :matters %></h1>
+<% title t(:matters) %>
 
-<% @matters.each do |matter| %>
-  <p>
-  <%= link_to matter.name, matter %> </br>
-  <%= matter.description %> </br>
-  <%= matter.quantity_lessons %> Aulas <br />
-  </p>
+<% content_for :main do %>
+  <% @matters.each do |matter| %>
+    <p>
+    <%= link_to matter.name, matter %> </br>
+    <%= matter.description %> </br>
+    <%= matter.quantity_lessons %> Aulas <br />
+    </p>
+  <% end %>
 <% end %>
 
-<br />
-<%= link_to 'Nova Disciplina', new_matter_path %>
+<% content_for :slidebar do %>
+  <%= link_to new_matter_path, :class => 'big button' do %>
+    <span class="plus icon"></span>Nova Disciplina
+  <% end %>
+<% end %>
 

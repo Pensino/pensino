@@ -1,13 +1,19 @@
-<h1>Listing courses</h1>
+<% title 'Courses' %>
 
-<% @courses.each do |course| %>
+<% content_for :main do %>
+  <% @courses.each do |course| %>
 
-  <%= link_to course.name, course %><br />
-  <%= course.description %><br />
-  Coordenador <%= course.employee.name %> - <%= course.steps %> <%= course.category_name %> - <%= course.grids.count %> Disciplinas <br />
-  <%= course.registrations.count %> Alunos Matriculados <br /><br />
+    <%= link_to course.name, course %><br />
+    <%= course.description %><br />
+    Coordenador <%= course.employee.name %> - <%= course.steps %> <%= course.category_name %> - <%= course.grids.count %> Disciplinas <br />
+    <%= course.registrations.count %> Alunos Matriculados <br /><br />
+  <% end %>
+  <br />
 <% end %>
-<br />
 
-<%= link_to 'New Course', new_course_path %>
+<% content_for :slidebar do %>
+  <%= link_to new_course_path, :class => 'big button' do %>
+    <span class="plus icon"></span>New Course
+  <% end %>
+<% end %>
 

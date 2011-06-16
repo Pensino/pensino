@@ -1,25 +1,30 @@
-<p id="notice"><%= notice %></p>
+<% title 'Expedient' %>
 
-<p>
-  <b>Day:</b>
-  <%= @expedient.day %>
-</p>
+<% content_for :main do %>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Start time:</b>
-  <%= @expedient.start_time %>
-</p>
+  <p>
+    <b>Day:</b>
+    <%= @expedient.day %>
+  </p>
 
-<p>
-  <b>End time:</b>
-  <%= @expedient.end_time %>
-</p>
+  <p>
+    <b>Start time:</b>
+    <%= @expedient.start_time %>
+  </p>
 
-<p>
-  <b>Quantity lessons:</b>
-  <%= @expedient.quantity_lessons %>
-</p>
+  <p>
+    <b>End time:</b>
+    <%= @expedient.end_time %>
+  </p>
+
+  <p>
+    <b>Quantity lessons:</b>
+    <%= @expedient.quantity_lessons %>
+  </p>
 
 
-<%= link_to 'Edit', edit_expedient_path(@expedient) %> |
-<%= link_to 'Back', expedients_path %>
+  <%= link_to 'Edit', edit_expedient_path(@expedient) %> |
+  <%= link_to 'Back', expedients_path %>
+<% end %>
+

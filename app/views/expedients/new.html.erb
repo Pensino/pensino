@@ -1,5 +1,9 @@
-<h1>New expedient</h1>
+<% title 'New Expedient' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Back', expedients_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', expedients_path %>
+<% end %>
+

@@ -1,7 +1,10 @@
-<h1>Atualizar Disciplina</h1>
+<% title 'Atualizar Disciplina' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Cancelar', @matter %> |
-<%= link_to 'Voltar', matters_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Cancelar', @matter %> |
+  <%= link_to 'Voltar', matters_path %>
+<% end %>
 

@@ -1,5 +1,9 @@
-<h1>New time_table</h1>
+<% title 'New Time Table' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Back', time_tables_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', time_tables_path %>
+<% end %>
+

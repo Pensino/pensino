@@ -1,6 +1,10 @@
-<h1>Editing registration</h1>
+<% title 'Editing Registration' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Show', @registration %> |
-<%= link_to 'Back', registrations_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @registration %> |
+  <%= link_to 'Back', registrations_path %>
+<% end %>
+

@@ -1,5 +1,9 @@
-<h1>New course</h1>
+<% title 'New Course' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Back', courses_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', courses_path %>
+<% end %>
+

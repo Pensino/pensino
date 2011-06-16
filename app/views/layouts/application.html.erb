@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pensino</title>
+  <title>Fatec | Pensino - <%= yield(:title) || 'Sua Instituição de Ensino na Núvem' %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -41,17 +41,27 @@
 
 
 
-<div id="wrapper">
-  <div id="app">
+<div id='wrapper'>
+  <div id='app'>
 
-    <div id="content">
-      <%= yield %>
+    <div id='content'>
+      <div id='content-header'>
+        <h2><%= yield(:title) %></h2>
+      </div>
+
+      <div id='content-main'>
+        <%= yield :main %>
+      </div>
+    </div>
+
+    <div id='slidebar'>
+      <%= yield :slidebar %>
     </div>
   </div>
 </div>
 
-<div id="footer">
-  <div id="app">
+<div id='footer'>
+  <div id='app'>
 
   </div>
 </div>

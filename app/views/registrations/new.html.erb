@@ -1,5 +1,9 @@
-<h1>New registration</h1>
+<% title 'New Registration' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Back', registrations_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', registrations_path %>
+<% end %>
+

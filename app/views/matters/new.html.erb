@@ -1,6 +1,9 @@
-<h1>Nova Disciplina</h1>
+<% title 'Nova Disciplina' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Disciplinas', matters_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Disciplinas', matters_path %>
+<% end %>
 

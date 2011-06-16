@@ -1,6 +1,10 @@
-<h1>Editing expedient</h1>
+<% title 'Editing Expedient' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Show', @expedient %> |
-<%= link_to 'Back', expedients_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @expedient %> |
+  <%= link_to 'Back', expedients_path %>
+<% end %>
+

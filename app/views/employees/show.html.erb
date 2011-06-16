@@ -1,35 +1,40 @@
-<p id="notice"><%= notice %></p>
+<% title 'Employee : ' + @employee.name %>
 
-<p>
-  <b>First name:</b>
-  <%= @employee.first_name %>
-</p>
+<% content_for :main do %>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Last name:</b>
-  <%= @employee.last_name %>
-</p>
+  <p>
+    <b>First name:</b>
+    <%= @employee.first_name %>
+  </p>
 
-<p>
-  <b>Document:</b>
-  <%= @employee.document %>
-</p>
+  <p>
+    <b>Last name:</b>
+    <%= @employee.last_name %>
+  </p>
 
-<p>
-  <b>Registration:</b>
-  <%= @employee.registration %>
-</p>
+  <p>
+    <b>Document:</b>
+    <%= @employee.document %>
+  </p>
 
-<p>
-  <b>Coordinator:</b>
-  <%= @employee.coordinator %>
-</p>
+  <p>
+    <b>Registration:</b>
+    <%= @employee.registration %>
+  </p>
 
-<p>
-  <b>Professor:</b>
-  <%= @employee.professor %>
-</p>
+  <p>
+    <b>Coordinator:</b>
+    <%= @employee.coordinator %>
+  </p>
+
+  <p>
+    <b>Professor:</b>
+    <%= @employee.professor %>
+  </p>
 
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+  <%= link_to 'Edit', edit_employee_path(@employee) %> |
+  <%= link_to 'Back', employees_path %>
+<% end %>
+

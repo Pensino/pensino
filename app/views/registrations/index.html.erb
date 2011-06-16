@@ -1,28 +1,33 @@
-<h1>Listing registrations</h1>
+<% title 'Registrations' %>
 
-<table>
-  <tr>
-    <th>Course</th>
-    <th>Student</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% content_for :main do %>
+  <table>
+    <tr>
+      <th>Course</th>
+      <th>Student</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @registrations.each do |registration| %>
-  <tr>
-    <td><%= registration.course.name %></td>
-    <td><%= registration.student.name %></td>
-    <td><%= registration.status %></td>
-    <td><%= link_to 'Show', registration %></td>
-    <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-    <td><%= link_to 'Destroy', registration, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <% @registrations.each do |registration| %>
+    <tr>
+      <td><%= registration.course.name %></td>
+      <td><%= registration.student.name %></td>
+      <td><%= registration.status %></td>
+      <td><%= link_to 'Show', registration %></td>
+      <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+      <td><%= link_to 'Destroy', registration, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 <% end %>
-</table>
 
+<% content_for :slidebar do %>
+  <%= link_to new_registration_path, :class => 'big button' do %>
+    <span class="plus icon"></span>New Registration
+  <% end %>
+<% end %>
 <br />
-
-<%= link_to 'New Registration', new_registration_path %>
 

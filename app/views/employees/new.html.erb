@@ -1,5 +1,9 @@
-<h1>New employee</h1>
+<% title 'New Employee' %>
 
-<%= render 'form' %>
+<% content_for :main do %>
 
-<%= link_to 'Back', employees_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', employees_path %>
+<% end %>
+
