@@ -169,16 +169,46 @@ body {
 		padding: 0px 0px 0px 780px;
 	}
 
-	label {
-		font-weight: bold;
 
+	.field {
+		line-height:30px;	 /* This will make the labels vertically centered with the inputs */
 	}
 
-	input {
 
+	form label {
+		float:left;
+		width:90px;
+		text-align:right;
+		margin-right:11px;
+		line-height:30px;	 /* This will make the labels vertically centered with the inputs */
+	  font-weight: bold;
+	}
+
+	form input,
+	form textarea {
+		padding:4px;
+		border:1px solid #999999;
+		/* width:320px; */
+	}
+
+	form input {
 		height: 20px;
-		border: 1px solid #2e4457;
 	}
+
+	form textarea {
+		height: 80px;
+	}
+
+	form select {
+		height: 25px;
+	}
+
+	form input:focus,
+	form textarea:focus {
+		border:1px solid #666;
+		background:#e3f1f1;
+	}
+
 
 #footer {
 

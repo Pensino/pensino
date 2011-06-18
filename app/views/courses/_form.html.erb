@@ -12,36 +12,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :category %><br />
+    <%= f.label :category %>
    	<%= f.select :category, [ ["Semanal", "1"], ["Bimestral", "2"], ["Semestral", "3"]], {:include_blank => true} %>
   </div>
   <div class="field">
-    <%= f.label :steps %><br />
+    <%= f.label :steps %>
     <%= f.text_field :steps %>
   </div>
   <div class="field">
-    <%= f.label :coordinator %><br />
+    <%= f.label :coordinator %>
     <%= f.collection_select(:employee_id, Employee.all(:conditions => {:coordinator => true}, :order => :first_name), :id, :name, {:include_blank => true}) %>
   </div>
-  <div class="field">
-    <%= f.label :grid %><br />
 
-    <% f.fields_for :grids do |builder| %>
-		  <%= render :partial => '/partials/grid_fields', :locals => { :f => builder }  %>
-	  <% end %>
-    <p><%= link_to_add_fields("Add Matter", f, :grids) %></p>
-  </div>
+  <br /><hr><br />
+
+  <% f.fields_for :grids do |builder| %>
+    <%= render :partial => '/partials/grid_fields', :locals => { :f => builder }  %>
+  <% end %>
+  <p><%= link_to_add_fields("Add Matter", f, :grids) %></p>
 
   <div class="actions">
-    <%= f.submit %> </br >
+    <%= f.submit %> or <%= link_to 'Cancel', courses_path %>
   </div>
 <% end %>
 

@@ -12,36 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :course %><br />
+    <%= f.label :course %>
     <%= @time_table.grid.course.name %>
   </div>
   <div class="field">
-    <%= f.label :matter %><br />
+    <%= f.label :matter %>
     <%= @time_table.grid.matter.name %>
   </div>
 
   <%= f.hidden_field :grid_id, :value => @time_table.grid.id %>
+  <br /><hr><br />
 
   <div class="field">
-    <%= f.label :professor %><br />
+    <%= f.label :professor %>
     <%= f.collection_select(:employee_id, Employee.all(:conditions => {:professor => true}, :order => :first_name), :id, :name, {:include_blank => true}) %>
   </div>
   <div class="field">
-    <%= f.label :start_date %><br />
+    <%= f.label :start_date %>
     <%= f.date_select :start_date %>
   </div>
   <div class="field">
-    <%= f.label :end_date %><br />
+    <%= f.label :end_date %>
     <%= f.date_select :end_date %>
   </div>
-  <div class="field">
-    <%= f.label :expedients %><br />
 
-    <% f.fields_for :expedient_time_tables do |builder| %>
-		  <%= render :partial => '/partials/expedient_time_table_fields', :locals => { :f => builder }  %>
-	  <% end %>
-    <p><%= link_to_add_fields("Add Expedients", f, :expedient_time_tables) %></p>
-  </div>
+  <br /><hr><br />
+  <% f.fields_for :expedient_time_tables do |builder| %>
+    <%= render :partial => '/partials/expedient_time_table_fields', :locals => { :f => builder }  %>
+  <% end %>
+  <p><%= link_to_add_fields("Add Expedients", f, :expedient_time_tables) %></p>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,5 +1,5 @@
 <p class="fields">
-  Dia <%= f.collection_select(:expedient_id, Expedient.order(:day), :id, :name, {:include_blank => true}) %>
-    	<%= link_to_remove_fields "Remove", f %><br />
+    <%= f.label :day %><%= f.collection_select(:expedient_id, Expedient.order(:day), :id, :name, {:include_blank => true}) %>
+   	<%= link_to_remove_fields "Remove", f %><br />
 </p>
 
