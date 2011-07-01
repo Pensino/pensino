@@ -5,6 +5,11 @@ module ApplicationHelper
     content_for(:title) { page_title.to_s }
   end
 
+  # Render error messages
+  def error_messages_for(resource)
+		render "shared/error_messages_for", :resource => resource
+	end
+
   # Remove polymorphic association
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
@@ -15,7 +20,7 @@ module ApplicationHelper
     new_object = f.object.class.reflect_on_association(association).klass.new
     fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
 
-      render("partials/" + association.to_s.singularize + "_fields", :f => builder)
+      render("shared/" + association.to_s.singularize + "_fields", :f => builder)
     end
     link_to_function(name, ("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end

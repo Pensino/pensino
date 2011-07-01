@@ -1,15 +1,6 @@
 <%= form_for(@lesson) do |f| %>
-  <% if @lesson.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
 
-      <ul>
-      <% @lesson.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @lesson %>
 
   <div class="field">
     <%= f.label :expedient_time_table_id %><br />
@@ -35,3 +26,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

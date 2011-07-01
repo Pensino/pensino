@@ -1,15 +1,6 @@
 <%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @course %>
 
   <div class="field">
     <%= f.label :name %>
@@ -35,7 +26,7 @@
   <br /><hr><br />
 
   <% f.fields_for :grids do |builder| %>
-    <%= render :partial => '/partials/grid_fields', :locals => { :f => builder }  %>
+    <%= render :partial => '/shared/grid_fields', :locals => { :f => builder }  %>
   <% end %>
   <p><%= link_to_add_fields("Add Matter", f, :grids) %></p>
 

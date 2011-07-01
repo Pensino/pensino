@@ -1,15 +1,6 @@
 <%= form_for(@employee) do |f| %>
-  <% if @employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
-      <ul>
-      <% @employee.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @employee %>
 
   <div class="field">
     <%= f.label :first_name %><br />
@@ -51,7 +42,7 @@
   <div class="field">
     <%= f.label :address %><br />
   	<% f.fields_for :addresses do |builder| %>
-	  	<%= render :partial => '/partials/address_fields', :locals => { :f => builder }  %>
+	  	<%= render :partial => '/shared/address_fields', :locals => { :f => builder }  %>
   	<% end %>
   </div>
   <div class="actions">

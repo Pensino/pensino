@@ -1,15 +1,6 @@
 <%= form_for(@expedient) do |f| %>
-  <% if @expedient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@expedient.errors.count, "error") %> prohibited this expedient from being saved:</h2>
 
-      <ul>
-      <% @expedient.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @expedient %>
 
   <div class="field">
     <%= f.label :day %><br />

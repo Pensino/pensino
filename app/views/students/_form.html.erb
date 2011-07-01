@@ -1,15 +1,6 @@
 <%= form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-      <ul>
-      <% @student.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @student %>
 
   <div class="field">
     <%= f.label :first_name %><br />
@@ -42,7 +33,7 @@
   <div class="field">
     <%= f.label :address %><br />
   	<% f.fields_for :addresses do |builder| %>
-	  	<%= render :partial => '/partials/address_fields', :locals => { :f => builder }  %>
+	  	<%= render :partial => '/shared/address_fields', :locals => { :f => builder }  %>
   	<% end %>
   </div>
   <div class="actions">
