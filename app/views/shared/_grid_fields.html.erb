@@ -1,0 +1,7 @@
+<p class="fields">
+
+	  <%= f.label :matter %> <%= f.collection_select(:matter_id, Matter.order(:name), :id, :name, {:include_blank => true}) %>
+    <b>Step</b><%= f.text_field :step %>
+   	<%= link_to_remove_fields "Remove", f %><br />
+</p>
+
