@@ -12,26 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :expedient_time_table_id %><br />
+    <%= f.label :expedient_time_table_id %>
     <%= f.text_field :expedient_time_table_id %>
   </div>
   <div class="field">
-    <%= f.label :date_lesson %><br />
+    <%= f.label :date_lesson %>
     <%= f.date_select :date_lesson %>
   </div>
   <div class="field">
-    <%= f.label :start_time %><br />
+    <%= f.label :start_time %>
     <%= f.time_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :end_time %><br />
+    <%= f.label :end_time %>
     <%= f.time_select :end_time %>
   </div>
   <div class="field">
-    <%= f.label :quantity_lessons %><br />
+    <%= f.label :quantity_lessons %>
     <%= f.text_field :quantity_lessons %>
   </div>
+
+  <br /><hr><br />
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

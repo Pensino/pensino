@@ -10,7 +10,8 @@ Pensino::Application.routes.draw do
     resources :registrations
     resources :lessons
 
-    match 'courses/:id/generate' => 'courses#generate'
+    match 'courses/:id/registration' => 'courses#registration'
+    match 'courses/:id/generate_lessons' => 'courses#generate_lessons'
     match 'registrations/:id/release' => 'registrations#release'
   end
   root :to => "courses#index", :as => "root"

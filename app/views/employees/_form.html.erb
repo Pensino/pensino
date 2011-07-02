@@ -12,48 +12,55 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :document %><br />
+    <%= f.label :document %>
     <%= f.text_field :document %>
   </div>
   <div class="field">
-    <%= f.label :registration %><br />
+    <%= f.label :registration %>
     <%= f.text_field :registration %>
   </div>
   <div class="field">
-    <%= f.label :coordinator %><br />
+    <%= f.label :coordinator %>
     <%= f.check_box :coordinator %>
   </div>
   <div class="field">
-    <%= f.label :professor %><br />
+    <%= f.label :professor %>
     <%= f.check_box :professor %>
   </div>
+
+  <br /><hr><br />
+
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-	  <%= f.label :username %><br />
+	  <%= f.label :username %>
 	  <%= f.text_field :username %>
   </div>
   <div class="field">
-	  <%= f.label :password %><br />
+	  <%= f.label :password %>
 	  <%= f.password_field :password %>
   </div>
 
+  <br /><hr><br />
+
   <div class="field">
-    <%= f.label :address %><br />
   	<% f.fields_for :addresses do |builder| %>
 	  	<%= render :partial => '/partials/address_fields', :locals => { :f => builder }  %>
   	<% end %>
   </div>
+
+  <br /><hr><br />
+
   <div class="actions">
     <%= f.submit %>
   </div>

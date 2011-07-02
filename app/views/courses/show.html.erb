@@ -38,9 +38,12 @@
           <%= expedient_time_table.expedient.name %><br />
         <% end %>
 
-        <%= link_to 'Generate Lessons', {:action => :generate, :grid => grid, :id => @course} %> |
-        <%= link_to 'Edit Time Table', {:controller => :time_tables, :action => :edit, :id => grid.time_table} %> |
-        <%= link_to 'Destroy Time Table', grid.time_table, :confirm => 'Are you sure?', :method => :delete %></td>
+        <% if grid.generate_lesson %>
+          <small>Aulas Geradas</small>
+        <% else %>
+          <%= link_to 'Edit Time Table', {:controller => :time_tables, :action => :edit, :id => grid.time_table} %> |
+          <%= link_to 'Generate Lessons', {:action => :generate_lessons, :grid => grid, :id => @course} %>
+        <% end %>
         <br />
       <% else %>
           <%= link_to 'Add Time Table', {:controller => :time_tables, :action => :new, :grid => grid} %><br />

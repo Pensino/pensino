@@ -21,6 +21,7 @@
   </div>
 
   <%= f.hidden_field :grid_id, :value => @time_table.grid.id %>
+
   <br /><hr><br />
 
   <div class="field">
@@ -37,11 +38,13 @@
   </div>
 
   <br /><hr><br />
+
   <% f.fields_for :expedient_time_tables do |builder| %>
     <%= render :partial => '/partials/expedient_time_table_fields', :locals => { :f => builder }  %>
   <% end %>
   <p><%= link_to_add_fields("Add Expedients", f, :expedient_time_tables) %></p>
 
+  <br /><hr><br />
 
   <div class="actions">
     <%= f.submit %>

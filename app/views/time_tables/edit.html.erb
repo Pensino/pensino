@@ -4,6 +4,7 @@
 
   <%= render 'form' %>
 
-  <%= link_to 'Back', {:controller => :courses, :action => :show, :id => @time_table.grid.course.id} %>
+  <%= link_to 'Back', {:controller => :courses, :action => :show, :id => @time_table.grid.course.id} %> |
+  <%= link_to 'Destroy', @time_table, :confirm => 'Are you sure?', :method => :delete %>
 <% end %>
 

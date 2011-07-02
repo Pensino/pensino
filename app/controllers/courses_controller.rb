@@ -108,13 +108,15 @@ class CoursesController < ApplicationController
   end
 
 
-  # PUT /courses/1/generate?grid=1                                 HTML and AJAX
+  # PUT /course/1/generate_lessons?grid=1                          HTML and AJAX
   # ----------------------------------------------------------------------------
-  def generate
-
+  def generate_lessons
 
     grid = Grid.find(params[:grid])
     grid.time_table.generate_lessons
+
+    grid.generate_lesson = 1
+    grid.save
 
     @course = Course.find(params[:id])
     redirect_to(@course, :notice => 'Generate Lesson.')

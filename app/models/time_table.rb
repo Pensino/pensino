@@ -24,7 +24,6 @@ class TimeTable < ActiveRecord::Base
 
   validates   :grid_id, :employee_id, :start_date, :end_date, :presence => true
 
-
   def name
     grid.name
   end
@@ -38,11 +37,10 @@ class TimeTable < ActiveRecord::Base
   # Se a data não estiver em ordem quebra o algoritimo
   def generate_lessons
 
+    date_lesson       = start_date
     lessons_generated = 0
 
-    date_lesson = start_date
-
-    while lessons_generated <= grid.matter.quantity_lessons
+    while lessons_generated < grid.matter.quantity_lessons
 
       expedient_time_tables.each do |expedient_time_table|
 
@@ -67,8 +65,8 @@ class TimeTable < ActiveRecord::Base
   # Incrementa os dias até chegar o dia da semana do expedient.
   def generate_day(date, day_of_week)
 
-    while (date.strftime('%u') != day_of_week)
-      date = date + 1.day
+    while (date.strftime('%u').to_s != day_of_week.to_s)
+      date += 1.day
     end
 
     date

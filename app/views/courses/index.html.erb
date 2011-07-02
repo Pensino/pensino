@@ -2,13 +2,12 @@
 
 <% content_for :main do %>
   <% @courses.each do |course| %>
-
-    <%= link_to course.name, course %><br />
+    <h3><%= link_to course.name, course %></h3>
     <%= course.description %><br />
     Coordenador <%= course.employee.name %> - <%= course.steps %> <%= course.category_name %> - <%= course.grids.count %> Disciplinas <br />
-    <%= course.registrations.count %> Alunos Matriculados <br /><br />
+    <%= course.registrations.count %> Alunos Registrados<br /><br />
   <% end %>
-  <br />
+
 <% end %>
 
 <% content_for :slidebar do %>

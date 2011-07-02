@@ -12,17 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :course_id %><br />
+    <%= f.label :course_id %>
     <%= f.collection_select(:course_id, Course.order(:name), :id, :name, {:include_blank => true}) %>
   </div>
   <div class="field">
-    <%= f.label :student_id %><br />
+    <%= f.label :student_id %>
     <%= f.collection_select(:student_id, Student.order(:first_name), :id, :name, {:include_blank => true}) %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
+    <%= f.label :status %>
     <%= f.text_field :status %>
   </div>
+
+  <br /><hr><br />
+
   <div class="actions">
     <%= f.submit %>
   </div>
