@@ -5,6 +5,11 @@ module ApplicationHelper
     content_for(:title) { page_title.to_s }
   end
 
+  # Render error messages
+  def error_messages_for( resource )
+    render "partials/error_messages_for", :resource => resource
+  end
+
   # Remove polymorphic association
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
