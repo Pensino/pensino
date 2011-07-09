@@ -2,11 +2,10 @@
 
 <% content_for :main do %>
   <% @matters.each do |matter| %>
-    <p>
-    <%= link_to matter.name, matter %> </br>
+
+    <h3><%= link_to matter.name, matter %> </h3>
     <%= matter.description %> </br>
-    <%= matter.quantity_lessons %> Aulas <br />
-    </p>
+    <%= matter.quantity_lessons %> Aulas <br /><br />
   <% end %>
 <% end %>
 

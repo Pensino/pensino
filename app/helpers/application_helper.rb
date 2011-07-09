@@ -48,11 +48,9 @@ module ApplicationHelper
                         <p class=\"#{type}\">#{flash[type]}</p>
                       </div>
                      </div>"
-
       end
     }
     messages
   end
-
 end
 

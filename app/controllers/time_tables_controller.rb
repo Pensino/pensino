@@ -4,8 +4,8 @@ class TimeTablesController < ApplicationController
   # GET /time_tables/new.xml
   def new
 
-    @time_table = TimeTable.new
-    @time_table.grid = Grid.find(params[:grid])
+    @time_table = TimeTable.new    
+    @time_table.grid = Grid.find( params[:grid] )    
 
     3.times { @time_table.expedient_time_tables.build }
 
