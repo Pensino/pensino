@@ -12,8 +12,8 @@
   <% @expedients.each do |expedient| %>
     <tr>
       <td><%= link_to expedient.day, expedient %></td>
-      <td><%= expedient.start_time %></td>
-      <td><%= expedient.end_time %></td>
+      <td><%= expedient.start_time.strftime("%H:%M:%S") %></td>
+      <td><%= expedient.end_time.strftime("%H:%M:%S") %></td>
       <td><%= expedient.quantity_lessons %></td>
     </tr>
   <% end %>
