@@ -16,6 +16,8 @@ class Expedient < ActiveRecord::Base
 
   validates   :day, :start_time, :end_time, :quantity_lessons, :presence => true
 
+  validate :end_time_is_after_start_time
+
   # TODO: arrumar isso
   def name
     if day == 1
@@ -47,6 +49,11 @@ class Expedient < ActiveRecord::Base
     end
 
     name
+  end
+
+  private
+  def end_time_is_after_start_time
+    errors.add( 'end_time', 'A hora final deve ser maior que a hora inicial' ) unless start_time < end_time
   end
 end
 
