@@ -188,11 +188,17 @@
   activerecord:
     models:
       matter: 'Disciplina'
+      expedient: 'Expediente'
     attributes:
       matter:
         name: 'Nome'
         description: 'Descrição'
         quantity_lessons: 'Quantidade de aulas'
+      expedient:
+        day: 'Dia da semana'
+        start_time: 'Início'
+        end_time: 'Fim'
+        quantity_lessons: 'Número de aulas'
     errors:
       template:
         header:
