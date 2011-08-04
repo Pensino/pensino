@@ -1,26 +1,20 @@
-<% title 'Expedients' %>
+<% title 'Expedientes' %>
 
 <% content_for :main do %>
   <table>
     <tr>
-      <th>Day</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Quantity lessons</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Dia da semana</th>
+      <th>Início</th>
+      <th>Fim</th>
+      <th>Número de aulas</th>
     </tr>
 
   <% @expedients.each do |expedient| %>
     <tr>
-      <td><%= expedient.day %></td>
+      <td><%= link_to expedient.day, expedient %></td>
       <td><%= expedient.start_time %></td>
       <td><%= expedient.end_time %></td>
       <td><%= expedient.quantity_lessons %></td>
-      <td><%= link_to 'Show', expedient %></td>
-      <td><%= link_to 'Alterar', edit_expedient_path(expedient) %></td>
-
     </tr>
   <% end %>
   </table>
@@ -28,7 +22,7 @@
 
 <% content_for :slidebar do %>
   <%= link_to new_expedient_path, :class => 'big button' do %>
-    <span class="plus icon"></span>New Expedient
+    <span class="plus icon"></span>Novo Expediente
   <% end %>
 <% end %>
 
