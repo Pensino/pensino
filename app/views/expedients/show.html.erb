@@ -1,29 +1,30 @@
-<% title 'Expedient' %>
+<% title 'Expediente' %>
 
 <% content_for :main do %>
 
   <p>
-    <b>Day:</b>
+    <b>Data:</b>
     <%= @expedient.day %>
   </p>
 
   <p>
-    <b>Start time:</b>
+    <b>Hora inicial:</b>
     <%= @expedient.start_time %>
   </p>
 
   <p>
-    <b>End time:</b>
+    <b>Hora final:</b>
     <%= @expedient.end_time %>
   </p>
 
   <p>
-    <b>Quantity lessons:</b>
+    <b>Número de Aulas:</b>
     <%= @expedient.quantity_lessons %>
   </p>
 
 
-  <%= link_to 'Edit', edit_expedient_path(@expedient) %> |
-  <%= link_to 'Back', expedients_path %>
+  <%= link_to 'Alterar', edit_expedient_path(@expedient) %> |
+  <%= link_to 'Remover', @expedient, :confirm => 'Tem certeza?', :method => :delete %> |
+  <%= link_to 'Voltar',  expedients_path %>
 <% end %>
 

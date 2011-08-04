@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 12) do
+ActiveRecord::Schema.define(:version => 20110709205601) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -50,6 +50,11 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
+  create_table "employees_fingerprints", :id => false, :force => true do |t|
+    t.integer "employee_id"
+    t.integer "fingerprint_id"
+  end
+
   create_table "enrollments", :force => true do |t|
     t.integer  "time_table_id"
     t.integer  "student_id"
@@ -69,6 +74,12 @@ ActiveRecord::Schema.define(:version => 12) do
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "quantity_lessons"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fingerprints", :force => true do |t|
+    t.binary   "fingerprint_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -118,6 +129,11 @@ ActiveRecord::Schema.define(:version => 12) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "students_fingerprints", :id => false, :force => true do |t|
+    t.integer "student_id"
+    t.integer "fingerprint_id"
   end
 
   create_table "time_tables", :force => true do |t|

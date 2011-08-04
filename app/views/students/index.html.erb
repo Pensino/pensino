@@ -3,10 +3,10 @@
 <% content_for :main do %>
   <table>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Document</th>
-      <th>Registration</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>CPF</th>
+      <th>RG</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,9 +18,9 @@
       <td><%= student.last_name %></td>
       <td><%= student.document %></td>
       <td><%= student.registration %></td>
-      <td><%= link_to 'Show', student %></td>
-      <td><%= link_to 'Edit', edit_student_path(student) %></td>
-      <td><%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Mostar', student %></td>
+      <td><%= link_to 'Alterar', edit_student_path(student) %></td>
+      <td><%= link_to 'Remover', student, :confirm => 'Tem certeza?', :method => :delete %></td>
     </tr>
   <% end %>
   </table>
