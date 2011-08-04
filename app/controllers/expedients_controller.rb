@@ -44,7 +44,7 @@ class ExpedientsController < ApplicationController
 
     respond_to do |format|
       if @expedient.save
-        format.html { redirect_to(@expedient, :notice => 'Expedient was successfully created.') }
+        format.html { redirect_to(@expedient, :notice => 'Expediente criado com sucesso.') }
         format.xml  { render :xml => @expedient, :status => :created, :location => @expedient }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class ExpedientsController < ApplicationController
 
     respond_to do |format|
       if @expedient.update_attributes(params[:expedient])
-        format.html { redirect_to(@expedient, :notice => 'Expedient was successfully updated.') }
+        format.html { redirect_to(@expedient, :notice => 'Expediente alterado com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -81,3 +81,4 @@ class ExpedientsController < ApplicationController
     end
   end
 end
+
