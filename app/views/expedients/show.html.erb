@@ -9,12 +9,12 @@
 
   <p>
     <b>Início:</b>
-    <%= @expedient.start_time %>
+    <%= @expedient.start_time.strftime("%H:%M:%S") %>
   </p>
 
   <p>
     <b>Fim:</b>
-    <%= @expedient.end_time %>
+    <%= @expedient.end_time.strftime("%H:%M:%S") %>
   </p>
 
   <p>
